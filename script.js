@@ -8,26 +8,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-async function login(event) {
+// Definir usuarios en el script en vez de fetch()
+const users = [
+    { username: "admin", password: "1234" },
+    { username: "usuario", password: "abcd" }
+];
+
+function login(event) {
     event.preventDefault();
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    try {
-        const response = await fetch("users.json");
-        const data = await response.json();
-        
-        const user = data.users.find(u => u.username === username && u.password === password);
-        
-        if (user) {
-            localStorage.setItem("sessionUser", username);
-            window.location.href = "menu.html";
-        } else {
-            document.getElementById("errorMessage").textContent = "Usuario o contraseña incorrectos";
-        }
-    } catch (error) {
-        console.error("Error cargando los usuarios", error);
+    const user = users.find(u => u.username === username && u.password === password);
+    
+    if (user) {
+        localStorage.setItem("sessionUser", username);
+        window.location.href = "menu.html";
+    } else {
+        document.getElementById("errorMessage").textContent = "Usuario o contraseña incorrectos";
     }
 }
 
