@@ -3,19 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú - Tracker de Películas</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tracker de Películas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        // Verificar si hay una sesión activa
+        if (!localStorage.getItem("loggedUser")) {
+            // Si no hay sesión activa, redirigir a la página de inicio de sesión
+            window.location.href = "index.html"; // Asegúrate de que este sea el nombre correcto de tu archivo de inicio de sesión
+        }
+    </script>
+
+    <div class="background"></div>
     <div class="menu-container">
-        <h2>Tracker de Películas</h2>
-        <p>Elige una opción</p>
+        <h1>Tracker de Películas</h1>
+        <p>ELIGE UNA OPCIÓN</p>
         <div class="menu-options">
-            <button onclick="window.location.href='peliculas-vistas.html'">Películas Vistas</button>
-            <button onclick="window.location.href='peliculas-por-ver.html'">Películas por Ver</button>
+            <a href="peliculas-vistas.html" class="menu-item">
+                <img src="https://i.imgur.com/2qwiUO3.png" alt="Películas Vistas">
+                <span>Películas Vistas</span>
+            </a>
+            <a href="peliculas-por-ver.html" class="menu-item">
+                <img src="https://i.imgur.com/vr6duFX.png" alt="Películas por Ver">
+                <span>Películas por ver</span>
+            </a>
+            <a href="usuario.html" class="menu-item">
+                <img src="https://i.imgur.com/CrNcxyS.png" alt="Usuario">
+                <span>Usuario</span>
+            </a>
+            <a href="configuracion.html" class="menu-item">
+                <img src="https://i.imgur.com/8YSWl06.png" alt="Configuración">
+                <span>Configuración</span>
+            </a>
         </div>
-        <button id="logoutButton">Cerrar sesión</button>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
