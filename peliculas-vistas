@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Películas Vistas</title>
+   <link rel="stylesheet" href="styles.css">
+   <script src="script.js" defer></script>
+</head>
+<body>
+
+
+
+  <h2>Películas Vistas</h2>
+
+<div id="add-movie-error" style="color: red; display: none;"></div>
+
+<div class="form-group">
+  <input type="text" id="movieTitleVistas" placeholder="Título de la película">
+  <div id="error-title" class="error-message" style="color: red; display: none;"></div>
+</div>
+
+<div class="form-group">
+  <input type="number" id="movieScore" placeholder="Puntaje de la película">
+  <div id="error-score" class="error-message" style="color: red; display: none;"></div>
+</div>
+
+<div class="form-group">
+  <textarea id="movieComment" placeholder="Comentario"></textarea>
+  <div id="error-comment" class="error-message" style="color: red; display: none;"></div>
+</div>
+
+<button class="add-movie-btn" onclick="addMovie()">Agregar Película</button>
+
+   <h3>Lista de películas vistas:</h3>
+
+
+   <input type="text" id="searchMovie" placeholder="Buscar película..." oninput="searchMovie()">
+
+   <ul id="movieList"></ul>
+
+   <div class="movies-container" id="moviesContainer"></div>
+
+   <a href="menu.html">Volver al menú</a>
+
+</body>
+</html>
